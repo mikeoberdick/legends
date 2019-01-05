@@ -43,8 +43,7 @@ add_filter('widget_text', 'do_shortcode');
 // *** Theme Styles *** \\
 
 function d4tw_enqueue_styles () {
-    wp_enqueue_style( 'Open Sans', 'https://fonts.googleapis.com/css?family=Open+Sans' );
-    wp_enqueue_style( 'AOS CSS', get_stylesheet_directory_uri() . '/aos/aos.css' );
+    wp_enqueue_style( 'Lato', 'https://fonts.googleapis.com/css?family=Lato' );
 }
 add_action('wp_enqueue_scripts', 'd4tw_enqueue_styles');
 
@@ -201,7 +200,8 @@ function d4tw_remove_sidebars () {
 	unregister_sidebar( 'hero' );
 	unregister_sidebar( 'footerfull' );
 	unregister_sidebar( 'left-sidebar' );
-
+    unregister_sidebar( 'herocanvas' );
+    unregister_sidebar( 'right-sidebar' );
 }
 
 add_action( 'widgets_init', 'd4tw_remove_sidebars', 11 );
@@ -245,18 +245,6 @@ function d4tw_sidebars() {
     );
     register_sidebar( $args );
 
-    $args = array(
-        'id'            => 'footer_4',
-        'class'         => 'footer_4',
-        'name'          => 'Footer 4',
-        'description'   => 'This widget area will appear in the fourth position of the footer.',
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</div>',
-        'before_title'  => '<h5 class="widgettitle">',
-        'after_title'   => '</h5>',
-    );
-    register_sidebar( $args );
-
 }
 add_action( 'widgets_init', 'd4tw_sidebars' );
 
@@ -264,4 +252,66 @@ add_action( 'widgets_init', 'd4tw_sidebars' );
 
 
 
-// *** WooCommerce *** \\
+// *** CUSTOM POST TYPES *** \\
+
+//Products custom post type
+add_action( 'init', 'product_post_type', 0 );
+function product_post_type() {
+// Set UI labels for Custom Post Type
+  $labels = array(
+    'name'                => 'Products',
+    'singular_name'       => 'Product',
+    'menu_name'           => 'Products',
+    'parent_item_colon'   => 'Parent Product',
+    'all_items'           => 'All Products',
+    'view_item'           => 'View Product',
+    'add_new_item'        => 'Add New Product',
+    'add_new'             => 'Add New',
+    'edit_item'           => 'Edit Product',
+    'update_item'         => 'Update Product',
+    'search_items'        => 'Search Products',
+    'not_found'           => 'No Product Found',
+    'not_found_in_trash'  => 'No Product Found in Trash',
+  );
+  
+// Set other options for Custom Post Type
+  $args = array(
+    'label'               => 'Product',
+    'description'         => 'Product',
+    'labels'              => $labels,
+    // Features this CPT supports in Post Editor
+    'supports'            => array( 'title', 'editor', 'author', 'thumbnail' ),
+    'hierarchical'        => false,
+    'public'              => true,
+    'show_ui'             => true,
+    'show_in_menu'        => true,
+    'show_in_nav_menus'   => true,
+    'show_in_admin_bar'   => true,
+    'menu_position'       => 5,
+    'can_export'          => true,
+    'has_archive'         => true,
+    'exclude_from_search' => false,
+    'publicly_queryable'  => true,
+    'capability_type'     => 'page',
+  );
+  
+  // Registering your Custom Post Type
+  register_post_type( 'Products', $args );
+}
+
+//Create the Product Category Taxonomy
+add_action( 'init', 'create_product_cat_taxonomy' );
+function create_product_cat_taxonomy() {
+  $labels = array(
+    'add_new_item' => 'Add New Product Category',
+    'view_item' => 'View Product Category',
+    'edit_item' => 'Edit Product Category',
+    'update_item' => 'Update Product Category',
+  );
+  $args = array(
+    'label' => 'Product Categories',
+    'rewrite' => array( 'slug' => 'product-category' ),
+    'labels'            => $labels,
+  );
+  register_taxonomy( 'product-category', array( 'products' ), $args );
+}

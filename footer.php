@@ -21,20 +21,16 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 	<div id = "footerWidgets" class = "row">
 
-		<div class = "col-lg-3 col-sm-12">
+		<div id = "footer-1" class = "col-lg-4">
 			<?php dynamic_sidebar('footer_1'); ?>
 		</div>
 		
-		<div class = "col-lg-3 col-sm-12">
+		<div id = "footer-2"  class = "col-lg-2">
 			<?php dynamic_sidebar('footer_2'); ?>
 		</div>
 		
-		<div class = "col-lg-3 col-sm-12">
+		<div id = "footer-3"  class = "col-lg-6">
 			<?php dynamic_sidebar('footer_3'); ?>
-		</div>
-		
-		<div class = "col-lg-3 col-sm-12">
-			<?php dynamic_sidebar('footer_4'); ?>
 		</div>
 
 	</div><!-- #footerWidgets -->
@@ -42,29 +38,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 	</div><!-- .container -->
 
 	<?php } ?>
-
-	<div id = "bottomFooter" class = "container-fluid">
-
-		<div class="row">
-
-			<div class="col-md-12">
-
-				<footer class="site-footer text-center" id="colophon">
-
-					<div class="site-info">
-					
-					<span>&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?></span><br />
-					<span>Website by <a href = "http://www.designs4theweb.com">Designs 4 The Web</a></span>
-
-					</div><!-- .site-info -->
-
-				</footer><!-- #colophon -->
-
-			</div><!--col end -->
-
-		</div><!-- row end -->
-
-	</div><!-- .container-fluid -->
 
 </div><!-- wrapper end -->
 

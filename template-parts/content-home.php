@@ -1,22 +1,43 @@
-<?php $image = get_field('hero_image'); ?>
-<div class="container-fluid heroSection" tabindex="-1" style = "background-image: url('<?php echo $image['url']; ?>')">
-	<div class = "row opacityLayer">
-		<div class = "container">
-			<div class = "row">
-				<div class = "col-sm-12 hpCallout">
-						<h2 class = "mb-5 text-center pl-5 pr-5 hpCTA"><?php the_field('homepage_cta'); ?></h2>
-				</div>
-			</div>
-				
-				<div class ="row hpButtons">
-					<div class = "col-sm-6 text-center">
-						<a href = "<?php echo bloginfo('url'); ?>/candidates"><button type="button" class="btn btn-primary btn-lg">CTA 1</button></a>
-					</div>
-					<div class = "col-sm-6 text-center">
-						<a href = "<?php echo bloginfo('url'); ?>/employers"><button type="button" class="btn btn-primary btn-lg">CTA 2</button></a>
-					</div>
-				</div><!-- .row -->
+<div class="container">
+	<div id="heroSection" class="row">
+		<div class="col-lg-4">
+			<h3><?php echo the_field('hero_header'); ?></h3>
+			<p><?php echo the_field('hero_copy'); ?></p>
+		</div><!-- .col-lg-4 -->
+		<div id = "productImages" class="col-lg-8">
+			<?php $hero_image = get_field('hero_image'); ?>
+			<img src = "<?php echo $hero_image['url']; ?>" title = "<?php echo $hero_image['title']; ?>" alt = "<?php echo $hero_image['alt']; ?>">
+		</div><!-- .col-lg-8 -->	
+	</div><!-- .row -->
+</div><!-- #heroSection.container -->
 
-		</div><!-- .container -->
-	</div><!-- #opacityLayer -->	
-</div><!-- .container-fluid -->
+<?php if( have_rows('product_callouts') ): ?>
+
+	<div class="container" id="productCallouts">
+		<div class="row">
+
+	<?php while( have_rows('product_callouts') ): the_row(); 
+
+		// vars
+		$image = get_sub_field('image');
+		$link = get_sub_field('link');
+
+		?>
+
+		<div class="col-lg-3">
+			<a class = "productCalloutWrapper" href = "<?php echo $link['url']; ?>">
+				<?php if( $image ): ?>
+					<img src = "<?php echo $image['url']; ?>" title = "<?php echo $image['title']; ?>" alt = "<?php echo $image['alt']; ?>" />
+				<?php endif; ?>
+				<?php if( $link ): ?>
+					<h5><?php echo $link['title']; ?></h5>
+				<?php endif; ?>
+			</a><!-- .productCalloutWrapper -->
+		</div><!-- .col-lg-3 -->
+
+	<?php endwhile; ?>
+
+		</div><!-- .row -->
+	</div><!-- #productCallouts.container -->
+
+<?php endif; ?>

@@ -6,14 +6,15 @@
 // Just add your color code here, compile the theme.scss file to change this color everywhere
 
 //Colors
-$brand-primary:         #f58634; // Orange
-$brand-secondary:	#000000; // Brand Secondary Color
-$brand-tertiary:	#ff0000; // Brand Tertiary Color
-$body-font-color:	#333;
+$brand-primary: #404040;  // Dark Grey
+$brand-secondary:   #009DFF; // Bright Blue
+$brand-tertiary: #000000;
+$header-font-color: #404040;
+$body-font-color:	#404040;
 
 //Fonts
-$header-font:       'Fjalla One', sans-serif;
-$body-font:         'Open Sans', sans-serif;
+$header-font:       'Lato', sans-serif;
+$body-font:         'Lato', sans-serif;
 $nav-font:          'Roboto', sans-serif;
 
 //Fluid Typography Variables

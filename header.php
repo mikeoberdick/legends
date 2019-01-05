@@ -38,41 +38,44 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <div class="hfeed site" id="page">
 
-	<!-- ******************* The Navbar Area ******************* -->
-	<div class="wrapper-fluid wrapper-navbar" id="wrapper-navbar" itemscope itemtype="http://schema.org/WebSite">
+<!-- ******************* The Navbar ******************* -->
+<div class="wrapper-fluid wrapper-navbar" id="wrapper-navbar" itemscope itemtype="http://schema.org/WebSite">
+	<div class="container">
 
 		<a class="skip-link screen-reader-text sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
 
 		<nav class="navbar navbar-expand-md">
+			<a rel = "home" class="navbar-brand" data-itemprop="url" title="<?php echo esc_attr( get_bloginfo( 'name') ); ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+				<?php $logo = get_field('logo', 'option'); ?>
+				<img id = "headerLogo" src = "<?php echo $logo['url']; ?>" title = "<?php echo $logo['title']; ?>" alt = "<?php echo esc_attr( get_bloginfo( 'name') ); ?>">
+			</a>
 
-			<div class="container">
+	  		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				<span class = "mobileToggle"><i class="fa fa-bars" aria-hidden="true"></i> Menu</span>
+			</button>
 
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-					<span class = "mobileToggle"><i class="fa fa-bars" aria-hidden="true"></i> Menu</span>
-				</button>
-					
-				<a rel = "home" class="navbar-brand" data-itemprop="url" title="<?php echo esc_attr( get_bloginfo( 'name') ); ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+			<div class="collapse navbar-collapse" id="navbarNavDropdown">
+			    <ul id = "main-menu" class="navbar-nav">
+			    	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" class="nav-item dropdown">
+				        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				          Products
+				        </a>
+					        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					          <a title="#" class="dropdown-item" href="#">1</a>
+					          <a title="#" class="dropdown-item" href="#">2</a>
+					          <a title="#" class="dropdown-item" href="#">3</a>
+					        </div>
+			      	</li>
 
-					<?php $logo = get_field('logo', 'option'); ?>
 
-					<img id = "headerLogo" src = "<?php echo $logo['url']; ?>" title = "<?php echo $logo['title']; ?>" alt = "<?php echo esc_attr( get_bloginfo( 'name') ); ?>">
-				</a>
-
-				<!-- The WordPress Menu goes here -->
-				<?php wp_nav_menu(
-					array(
-						'theme_location'  => 'primary',
-						'container_class' => 'collapse navbar-collapse',
-						'container_id'    => 'navbarNavDropdown',
-						'menu_class'      => 'navbar-nav',
-						'fallback_cb'     => '',
-						'menu_id'         => 'main-menu',
-						'walker'          => new understrap_WP_Bootstrap_Navwalker(),
-					)
-				); ?>
-
-			</div><!-- .container -->
-
-		</nav><!-- .site-navigation -->
-
-	</div><!-- .wrapper-navbar end -->
+				      <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" class = "nav-item">
+				        <a title="Where to Buy" href="/where-to-buy" class="nav-link">Where to Buy</a>
+				      </li>
+				      <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" class = "nav-item">
+				        <a title="Contact Us" href="/contact-us" class="nav-link">Contact Us</a>
+				      </li>
+			    </ul><!-- #main-menu -->
+			</div><!-- .collapse -->
+		</nav>
+	</div><!-- .container -->
+</div><!-- .wrapper-navbar end -->

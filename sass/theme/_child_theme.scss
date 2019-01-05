@@ -76,17 +76,41 @@ a {
   }
 
 /*------------------------------------------------*/
-/*--------------------[HEADER]--------------------*/
+/*--------------------[HEADER & NAVIGATION]--------------------*/
 /*------------------------------------------------*/
 
 #headerLogo {
 	max-width: 300px;
 }
 
-.navbar {
+#wrapper-navbar {
+	background: rgba(256,256,256,0.8);
+	padding-bottom: 0;
+	padding-bottom: 15px;
+    border-bottom: solid 2px #404040;
+    -webkit-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
+	-moz-box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
+	box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.16);
+	position: relative;
+	z-index: 1;
+
 	.container {
-		padding-bottom: 15px;
-		border-bottom: solid 2px $brand-primary;
+
+		.active {
+			a {
+				color: $brand-secondary;
+			}
+		}
+
+		a {
+			color: $brand-primary;
+			font-weight: bold;
+			text-transform: uppercase;
+
+			&:hover {
+				color: $brand-secondary;
+			}
+		}
 	}
 }
 
@@ -106,9 +130,27 @@ a {
 /*----------------------[PAGES]-------------------*/
 /*------------------------------------------------*/
 
-.wrapper {
+// GENERAL
+
+#page-wrapper {
 	padding: 0 !important;
+	position: relative
+	z-index: 0;
 }
+
+//PAGE TITLES
+
+.pageHeader {
+    height: 325px;
+    background-repeat: no-repeat;
+    background-position: center center;
+	
+	.pageTitle {
+		margin-top: 100px;
+	}
+
+}
+
 
 //HOMEPAGE
 
@@ -142,6 +184,14 @@ a {
 			text-align: center;
 		}
 	}
+}
+
+// WHERE TO BUY
+
+#productsLocator {
+	position: relative;
+    top: -100px;
+    background: white;
 }
 
 /*------------------------------------------------*/

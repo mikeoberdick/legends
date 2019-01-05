@@ -10859,14 +10859,28 @@ a:hover {
   border-color: #404040 !important; }
 
 /*------------------------------------------------*/
-/*--------------------[HEADER]--------------------*/
+/*--------------------[HEADER & NAVIGATION]--------------------*/
 /*------------------------------------------------*/
 #headerLogo {
   max-width: 300px; }
 
-.navbar .container {
+#wrapper-navbar {
+  background: rgba(255, 255, 255, 0.8);
+  padding-bottom: 0;
   padding-bottom: 15px;
-  border-bottom: solid 2px #404040; }
+  border-bottom: solid 2px #404040;
+  -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
+  position: relative;
+  z-index: 1; }
+  #wrapper-navbar .container .active a {
+    color: #009DFF; }
+  #wrapper-navbar .container a {
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase; }
+    #wrapper-navbar .container a:hover {
+      color: #009DFF; }
 
 #navbarNavDropdown {
   -webkit-box-pack: end;
@@ -10884,6 +10898,13 @@ a:hover {
 /*------------------------------------------------*/
 .wrapper {
   padding: 0 !important; }
+
+.pageHeader {
+  height: 325px;
+  background-repeat: no-repeat;
+  background-position: center center; }
+  .pageHeader .pageTitle {
+    margin-top: 100px; }
 
 #heroSection {
   margin-top: 50px;
@@ -10907,6 +10928,11 @@ a:hover {
   #productCallouts a h5 {
     margin-top: 15px;
     text-align: center; }
+
+#productsLocator {
+  position: relative;
+  top: -100px;
+  background: white; }
 
 /*------------------------------------------------*/
 /*--------------------[SIDEBAR]-------------------*/

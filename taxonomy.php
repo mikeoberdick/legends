@@ -19,8 +19,8 @@ $copy = get_field('description', $term);
 
 <div class="wrapper" id="page-wrapper">
 	<main class="site-main" id="main">
-		<header>
-			<div class="container-fluid pageHeader" style = "background-image: url('<?php echo $banner_img['url']; ?>')">
+		<header class = "pageHeader" style = "background-image: url('<?php echo $banner_img['url']; ?>')">
+			<div class="container">
 				<div class="row">
 					<div class = "col-lg-6 offset-lg-6 titleWrapper">
 						<h3 class="pageTitle"><?php echo $term->name; ?></h3>
@@ -34,7 +34,7 @@ $copy = get_field('description', $term);
 
 <div id="individualProducts" class="container">
 	<div class="row">
-		<?php
+<!-- 		<?php
 			$total_terms = $term->count;
 
 			if ($total_terms === 1){
@@ -45,11 +45,19 @@ $copy = get_field('description', $term);
 				$col_span = 'col-sm-4';
 			} else if ($total_terms === 4){
 				$col_span = 'col-sm-3';
-			} ?>
+			} ?> -->
 
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>          
-				<div class="individualProduct <?php echo $col_span; ?>"> 
-    			<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+				<div class="individualProduct col-lg-3"> 
+    			<a href="<?php the_permalink(); ?>">
+    				<?php the_post_thumbnail( 'medium' ); ?>
+    			</a>
+    				<h5><?php the_field('product_display_name'); ?></h5>
+    				<a href="<?php the_permalink(); ?>">
+    					<button role = 'button' class = 'btn' style = "background-color:<?php the_field('product_color'); ?>">Learn More</button>
+    				</a>
+    				<p><?php the_field('product_description'); ?></p>
+    			</a>
     		</div><!-- .individualProduct -->
 			<?php endwhile; endif; wp_reset_query(); ?>
 	</div><!-- .row -->

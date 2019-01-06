@@ -17,8 +17,8 @@ get_header();
 	<main class="site-main" id="main">
 		<?php if ( !is_front_page() ) { ?>
 			<?php $bg = get_field('banner_image'); ?>
-			<header>
-				<div class="container-fluid pageHeader" style = "background-image: url('<?php echo $bg['url']?>')">
+			<header class = "pageHeader" style = "background-image: url('<?php echo $bg['url']?>')">
+				<div class="container">
 					<div class="row">
 						<div class = "col-lg-6 offset-lg-6 titleWrapper">
 							<h3 class="pageTitle"><?php echo get_field('headline') ?></h3>
@@ -31,15 +31,15 @@ get_header();
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<?php if (is_page('homepage')) {
-				get_template_part( 'template-parts/content', 'home' );
+				get_template_part( 'template-parts/page/content', 'home' );
 			}
 
 			else if (is_page('where-to-buy')) {
-				get_template_part( 'template-parts/content', 'where-to-buy' );
+				get_template_part( 'template-parts/page/content', 'where-to-buy' );
 			}
 
 			else if (is_page('contact-us')) {
-				get_template_part( 'template-parts/content', 'contact-us' );
+				get_template_part( 'template-parts/page/content', 'contact-us' );
 			}
 
 			else {

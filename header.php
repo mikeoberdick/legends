@@ -58,7 +58,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			    <ul id = "main-menu" class="navbar-nav">
 
 <!-- PRODUCTS MEGA MENU -->
-<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" class="nav-item dropdown mega-dropdown active">
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" class="nav-item dropdown mega-dropdown">
 	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
 		<div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-3 px-3" aria-labelledby="navbarDropdownMenuLink">
 			<div class="row">

@@ -8,44 +8,68 @@
 
 get_header(); ?>
 
-
-<?php
-// get the current taxonomy term
-$term = get_queried_object();
-// vars
-$banner_img = get_field('product_category_image', $term);
-$copy = get_field('description', $term);
- ?>
-<header class = "pageHeader" style = "background-image: url('<?php echo $banner_img['url']; ?>')">
-	<div class="container">
-		<div class="row">
-			<div class = "col-lg-6 offset-lg-6 titleWrapper">
-				<h3 class="pageTitle"><?php echo $term->name; ?></h3>
-				<p><?php echo term_description(); ?></p>
-			</div><!-- .titleWrapper -->
-		</div><!-- .row -->
-	</div><!-- .container -->
-</header><!-- .pageHeader -->
-
 <main class="site-main" id="main">
 	<div class="container">
-		<div class="row individualProducts"> 
+		<div class="row">
+			<div class="col-lg-12">
+				<h3><?php the_field('product_display_name'); ?></h3>
+			</div>
 
-				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>          
-					<div class="individualProduct col-lg-3"> 
-	    			<a href="<?php the_permalink(); ?>">
-	    				<?php the_post_thumbnail( 'medium' ); ?>
-	    			</a>
-	    				<h5><?php the_field('product_display_name'); ?></h5>
-	    				<a href="<?php the_permalink(); ?>">
-	    					<button role = 'button' class = 'btn' style = "background-color:<?php the_field('product_color'); ?>">Learn More</button>
-	    				</a>
-	    				<p><?php the_field('product_description'); ?></p>
-	    			</a>
-	    		</div><!-- .individualProduct -->
-				<?php endwhile; endif; wp_reset_query(); ?>
+			<div class="col-lg-3">
+				<?php the_post_thumbnail( 'medium_large' ); ?>
+			</div>
+
+			<div id = "center-content" class="col-lg-6">
+				<p class = "mb-0"><?php the_field('single_page_description'); ?></p>
+				<a href = '/where-to-buy'><button role = 'button' class = 'mt-4 mb-4 text-white btn btn-lg' style = "background-color:<?php the_field('product_color'); ?>">Where to Buy</button></a></a>
+				<h5 class = "mb-3">Benefits of <?php echo the_field('product_display_name'); ?>:</h5>
+				<div class = "benefits"><?php echo the_field('benefits'); ?></div>
+				<div id = "vertical-sep"></div>
+			</div>
+			
+			<div id = "great-for" class="col-lg-3">
+				<h5>Great For:</h5>
+				<ul class = "list-unstyled">
+					<?php
+    				$list_items = get_field('great_for');
+    				$items = explode(",", $list_items);
+                    foreach($items as $item) {
+                        echo '<li>' . $item . '</li>';
+                    }?>
+				</ul>
+			</div>
 		</div><!-- .row -->
-	</div><!-- #individualProducts.container -->
+	</div><!-- .container -->
+
+	<div id = "tabsWrapper" class="container mt-5">
+		<ul class="nav nav-tabs" id="productsTabs" role="tablist">
+			  <li class="nav-item" style = "background-color:<?php the_field('product_color'); ?>">
+			    <a class="nav-link active" id="ga-tab" data-toggle="tab" href="#ga" role="tab" aria-controls="Guaranteed Analysis" aria-selected="true">Guaranteed Analysis</a>
+			  </li>
+			  <li class="nav-item" style = "background-color:<?php the_field('product_color'); ?>">
+			    <a class="nav-link" id="ingredients-tab" data-toggle="tab" href="#ingredients" role="tab" aria-controls="ingredients" aria-selected="false">Ingredients</a>
+			  </li>
+			  <li class="nav-item" style = "background-color:<?php the_field('product_color'); ?>">
+			    <a class="nav-link" id="feeding-tab" data-toggle="tab" href="#feeding" role="tab" aria-controls="feeding" aria-selected="false">Feeding Directions</a>
+			  </li>
+			</ul>
+
+			<div class="tab-content" id="productsTabsContent">
+			  <div class="tab-pane fade show active" id="ga" role="tabpanel" aria-labelledby="ga-tab">
+			  	<h6 class = "text-uppercase">Guaranteed Analysis</h6>
+			  </div>
+			  <div class="tab-pane fade" id="ingredients" role="tabpanel" aria-labelledby="ingredients-tab">
+			  	<h6 class = "text-uppercase">Ingredients</h6>
+			  </div>
+			  <div class="tab-pane fade" id="feeding" role="tabpanel" aria-labelledby="feeding-tab">
+			  	<h6 class = "text-uppercase">Feeding Directions</h6>
+			</div>
+			</div>
+	</div><!-- #tabsWrapper -->
+
+
+			
+
 </main><!-- #main -->
 
 <?php get_footer(); ?>

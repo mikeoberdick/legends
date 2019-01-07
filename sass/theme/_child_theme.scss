@@ -147,7 +147,7 @@ a {
 
 #breadcrumbs {
 	position: absolute;
-    top: 115px;
+    top: 125px;
     color: #fff;
 
     a {
@@ -252,6 +252,88 @@ a {
 				margin-top: 20px;
 			}
 		}
+	}
+}
+
+// Single PRODUCTS
+
+.single-products {
+	#breadcrumbs {
+		color: $brand-primary;
+		a {
+			color: $brand-primary;
+		}
+	}
+	.site-main {
+		margin-top: 150px;
+		.benefits {
+			padding-left: 1rem;
+			ul {
+				padding-left: 0;
+			}
+		}
+		#center-content {
+			padding-right: 25px;
+			    &:after {
+					content: '';
+				    height: 75%;
+				    width: 1px;
+				    display: block;
+				    background-color: #707070;
+				    position: absolute;
+				    top: 0;
+				    right: 0;
+			    }
+			}
+
+		#great-for {
+			padding-left: 25px;
+			li {
+				margin-bottom: 10px;
+				&:before {
+				    content: '';
+				    background-image: url(../img/green_check.png);
+				    width: 25px;
+				    height: 25px;
+				    margin-right: 5px;
+				    display: inline-block;
+				    background-size: contain;
+				    background-repeat: no-repeat;
+				}
+				&:last-of-type {
+					margin-bottom:0;
+				}
+			}
+		}
+	}
+}
+
+#tabsWrapper {
+	.nav-tabs {
+		border-color: $brand-primary;
+		.nav-item {
+			border-radius: 8px 8px 0 0;
+			margin-right: 10px;
+			&:last-of-type {
+				margin-right: 0;
+			}
+			a:not(.active) {
+				color: #fff;
+			}
+		}
+		.nav-link.active {
+			border-color: $brand-primary $brand-primary #fff;
+		}
+
+		.nav-link:not(.active) {
+				&:hover, &:focus {
+					border-color: transparent;
+			}
+		}
+	}
+
+	.tab-content {
+		padding-top: 50px;
 	}
 }
 

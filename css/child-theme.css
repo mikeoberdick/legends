@@ -10909,7 +10909,7 @@ a:hover {
 
 #breadcrumbs {
   position: absolute;
-  top: 115px;
+  top: 125px;
   color: #fff; }
   #breadcrumbs a {
     color: #fff; }
@@ -10984,6 +10984,61 @@ a:hover {
       margin-top: 20px; }
     .tax-product-category .individualProducts .individualProduct p {
       margin-top: 20px; }
+
+.single-products #breadcrumbs {
+  color: #404040; }
+  .single-products #breadcrumbs a {
+    color: #404040; }
+
+.single-products .site-main {
+  margin-top: 150px; }
+  .single-products .site-main .benefits {
+    padding-left: 1rem; }
+    .single-products .site-main .benefits ul {
+      padding-left: 0; }
+  .single-products .site-main #center-content {
+    padding-right: 25px; }
+    .single-products .site-main #center-content:after {
+      content: '';
+      height: 75%;
+      width: 1px;
+      display: block;
+      background-color: #707070;
+      position: absolute;
+      top: 0;
+      right: 0; }
+  .single-products .site-main #great-for {
+    padding-left: 25px; }
+    .single-products .site-main #great-for li {
+      margin-bottom: 10px; }
+      .single-products .site-main #great-for li:before {
+        content: '';
+        background-image: url(../img/green_check.png);
+        width: 25px;
+        height: 25px;
+        margin-right: 5px;
+        display: inline-block;
+        background-size: contain;
+        background-repeat: no-repeat; }
+      .single-products .site-main #great-for li:last-of-type {
+        margin-bottom: 0; }
+
+#tabsWrapper .nav-tabs {
+  border-color: #404040; }
+  #tabsWrapper .nav-tabs .nav-item {
+    border-radius: 8px 8px 0 0;
+    margin-right: 10px; }
+    #tabsWrapper .nav-tabs .nav-item:last-of-type {
+      margin-right: 0; }
+    #tabsWrapper .nav-tabs .nav-item a:not(.active) {
+      color: #fff; }
+  #tabsWrapper .nav-tabs .nav-link.active {
+    border-color: #404040 #404040 #fff; }
+  #tabsWrapper .nav-tabs .nav-link:not(.active):hover, #tabsWrapper .nav-tabs .nav-link:not(.active):focus {
+    border-color: transparent; }
+
+#tabsWrapper .tab-content {
+  padding-top: 50px; }
 
 /*------------------------------------------------*/
 /*--------------------[SIDEBAR]-------------------*/

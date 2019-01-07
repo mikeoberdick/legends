@@ -36,6 +36,9 @@ add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
 // Shortcodes in text widgets
 add_filter('widget_text', 'do_shortcode');
 
+//Yoast Breadcrumbs
+add_theme_support( 'yoast-seo-breadcrumbs' );
+
 
 
 

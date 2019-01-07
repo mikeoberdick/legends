@@ -12,9 +12,6 @@
 get_header();
 
 ?>
-
-<div class="wrapper" id="page-wrapper">
-	<main class="site-main" id="main">
 		<?php if ( !is_front_page() ) { ?>
 			<?php $bg = get_field('banner_image'); ?>
 			<header class = "pageHeader" style = "background-image: url('<?php echo $bg['url']?>')">
@@ -27,6 +24,8 @@ get_header();
 				</div><!-- .container -->
 			</header><!-- .pageHeader -->
 		<?php } ?>
+
+	<main class="site-main" id="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
@@ -51,7 +50,5 @@ get_header();
 		<?php endwhile; // end of the loop. ?>
 
 	</main><!-- #main -->
-
-</div><!-- #page-wrapper -->
 
 <?php get_footer(); ?>

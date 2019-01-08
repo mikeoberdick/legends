@@ -9,3 +9,6 @@ jQuery(document).ready(function() {
 	// Only works if the href value is exactly equal to the page slug
 	jQuery('#main-menu li a[href="'+ url +'"]').parent().addClass('active');
 });
+
+//Disable the 'products' link in footer menu
+jQuery('#menu-footer-menu li a').first().removeAttr("href").css("cursor","default");

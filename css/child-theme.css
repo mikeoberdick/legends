@@ -10872,17 +10872,44 @@ a:hover {
   -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
   box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
   z-index: 1;
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%; }
-  #wrapper-navbar .container .active a {
+  #wrapper-navbar .active a {
     color: #009DFF; }
-  #wrapper-navbar .container .nav-link {
+  #wrapper-navbar .nav-link {
     color: #404040;
     font-weight: bold;
     text-transform: uppercase; }
-    #wrapper-navbar .container .nav-link:hover {
+    #wrapper-navbar .nav-link:hover {
       color: #009DFF; }
+
+.dropdownToggle {
+  position: relative; }
+  .dropdownToggle:after {
+    content: '';
+    height: 14px;
+    width: 14px;
+    background: url(../img/dropdown.png);
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    display: inline-block;
+    margin-left: 10px; }
+  .dropdownToggle:hover:after {
+    background: url(../img/dropdown_hover.png); }
+
+.show > .dropdownToggle:before {
+  content: '';
+  display: block;
+  background: url(../img/callout.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  bottom: -22px;
+  right: 0;
+  z-index: 9999; }
 
 #navbarNavDropdown {
   -webkit-box-pack: end;
@@ -10890,7 +10917,19 @@ a:hover {
           justify-content: flex-end; }
 
 .dropdown-menu {
-  top: auto; }
+  left: 25%;
+  right: 10%;
+  top: auto;
+  margin-top: 10px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border-color: #404040;
+  border-width: 2px; }
+
+.dropdown-menu.show {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important; }
 
 .navbar .mega-dropdown {
   position: static !important; }
@@ -11121,7 +11160,16 @@ a:hover {
           align-self: center; }
     #wrapper-footer #footerWidgets #footer-2 ul {
       padding-left: 0;
-      list-style: none; }
+      list-style: none;
+      text-transform: uppercase; }
+      #wrapper-footer #footerWidgets #footer-2 ul .menu-item-type-taxonomy {
+        line-height: 22px;
+        text-transform: initial; }
+        #wrapper-footer #footerWidgets #footer-2 ul .menu-item-type-taxonomy:before {
+          content: '>';
+          margin-right: 5px;
+          line-height: 22px;
+          vertical-align: middle; }
       #wrapper-footer #footerWidgets #footer-2 ul li {
         margin-bottom: 5px; }
         #wrapper-footer #footerWidgets #footer-2 ul li a {

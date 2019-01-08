@@ -1,4 +1,3 @@
-
 <?php
 
 // *** Theme Setup *** \\
@@ -162,23 +161,6 @@ function d4tw_admin_css() {
 
 add_action('admin_head', 'd4tw_admin_css');
 
-
-
-
-
-// *** Custom Menus *** \\
-
-
-
-
-
-
-// *** Template Tags *** \\
-
-
-
-
-
 // *** User Tweaks & Permissions *** \\
 
 // Hide the admin toolbar for non-admins
@@ -250,10 +232,6 @@ function d4tw_sidebars() {
 }
 add_action( 'widgets_init', 'd4tw_sidebars' );
 
-
-
-
-
 // *** CUSTOM POST TYPES *** \\
 
 //Products custom post type
@@ -282,7 +260,7 @@ function product_post_type() {
     'description'         => 'Product',
     'labels'              => $labels,
     // Features this CPT supports in Post Editor
-    'supports'            => array( 'title', 'editor', 'author', 'thumbnail' ),
+    'supports'            => array( 'title', 'editor', 'page-attributes', 'thumbnail' ),
     'hierarchical'        => false,
     'public'              => true,
     'show_ui'             => true,

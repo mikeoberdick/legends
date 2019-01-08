@@ -40,8 +40,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <!-- ******************* The Navbar ******************* -->
 <div class="wrapper-fluid wrapper-navbar" id="wrapper-navbar" itemscope itemtype="http://schema.org/WebSite">
-	<div class="container">
-
 		<a class="skip-link screen-reader-text sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
 
 		<nav class="navbar navbar-expand-md">
@@ -59,7 +57,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <!-- PRODUCTS MEGA MENU -->
 <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" class="nav-item dropdown mega-dropdown">
-	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
+	<a class="nav-link dropdownToggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
 		<div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-3 px-3" aria-labelledby="navbarDropdownMenuLink">
 			<div class="row">
 				<?php $terms = get_terms('product-category'); ?>
@@ -67,7 +65,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 				<div class="col-md-6 col-xl-3 sub-menu mb-xl-0 mb-4">
 					<h6 class="subtitle text-uppercase font-weight-bold"><?php echo $term->name ?></h6>
 					<ul class="list-unstyled">
-					<?php query_posts('post_type=products&posts_per_page=-1&product-category='.$term->slug.''); ?>
+					<?php query_posts('post_type=products&posts_per_page=-1&order=asc&product-category='.$term->slug.''); ?>
 					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 						<li>
 							<a class="menu-item pl-0" href="<?php the_permalink(); ?>">
@@ -94,7 +92,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 			    </ul><!-- #main-menu -->
 			</div><!-- .collapse -->
 		</nav>
-	</div><!-- .container -->
 </div><!-- .wrapper-navbar end -->
 <div class="container">
 <?php

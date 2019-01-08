@@ -57,19 +57,105 @@ get_header(); ?>
 			<div class="tab-content" id="productsTabsContent">
 			  <div class="tab-pane fade show active" id="ga" role="tabpanel" aria-labelledby="ga-tab">
 			  	<h6 class = "text-uppercase">Guaranteed Analysis</h6>
+
+<?php $analysis_table = get_field( 'guaranteed_analysis' ); ?>
+
+<?php if ( $analysis_table ) {
+
+    echo '<table border="0">';
+
+        if ( $analysis_table['header'] ) {
+
+            echo '<thead>';
+
+                echo '<tr>';
+
+                    foreach ( $analysis_table['header'] as $th ) {
+
+                        echo '<th>';
+                            echo $th['c'];
+                        echo '</th>';
+                    }
+
+                echo '</tr>';
+
+            echo '</thead>';
+        }
+
+        echo '<tbody>';
+
+            foreach ( $analysis_table['body'] as $tr ) {
+
+                echo '<tr>';
+
+                    foreach ( $tr as $td ) {
+
+                        echo '<td>';
+                            echo $td['c'];
+                        echo '</td>';
+                    }
+
+                echo '</tr>';
+            }
+
+        echo '</tbody>';
+
+    echo '</table>';
+} ?>
 			  </div>
 			  <div class="tab-pane fade" id="ingredients" role="tabpanel" aria-labelledby="ingredients-tab">
 			  	<h6 class = "text-uppercase">Ingredients</h6>
+			  	<?php the_field('ingredients'); ?>
 			  </div>
 			  <div class="tab-pane fade" id="feeding" role="tabpanel" aria-labelledby="feeding-tab">
 			  	<h6 class = "text-uppercase">Feeding Directions</h6>
+			  	<?php $feeding_table = get_field( 'feeding_directions' ); ?>
+
+<?php if ( $feeding_table ) {
+
+    echo '<table border="0">';
+
+        if ( $feeding_table['header'] ) {
+
+            echo '<thead>';
+
+                echo '<tr>';
+
+                    foreach ( $feeding_table['header'] as $th ) {
+
+                        echo '<th>';
+                            echo $th['c'];
+                        echo '</th>';
+                    }
+
+                echo '</tr>';
+
+            echo '</thead>';
+        }
+
+        echo '<tbody>';
+
+            foreach ( $feeding_table['body'] as $tr ) {
+
+                echo '<tr>';
+
+                    foreach ( $tr as $td ) {
+
+                        echo '<td>';
+                            echo $td['c'];
+                        echo '</td>';
+                    }
+
+                echo '</tr>';
+            }
+
+        echo '</tbody>';
+
+    echo '</table>';
+} ?>
 			</div>
 			</div>
 	</div><!-- #tabsWrapper -->
-
-
-			
-
 </main><!-- #main -->
 
 <?php get_footer(); ?>

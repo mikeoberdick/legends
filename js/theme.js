@@ -12,3 +12,7 @@ jQuery(document).ready(function() {
 
 //Disable the 'products' link in footer menu
 jQuery('#menu-footer-menu li a').first().removeAttr("href").css("cursor","default");
+
+jQuery("a:contains('®')").html(function(_, html) {
+   return html.replace(/(®)/g, '<sup>®</sup>');
+});

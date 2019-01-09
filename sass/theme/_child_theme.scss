@@ -101,16 +101,25 @@ a {
 			color: $brand-secondary;
 		}
 	}
-
-	.nav-link {
+.nav-item {
+		.nav-link {
 		color: $brand-primary;
 		font-weight: bold;
 		text-transform: uppercase;
+		padding-right: 50px;
 
 		&:hover {
 			color: $brand-secondary;
 		}
 	}
+	&:last-child {
+		a {
+			padding-right: 0;
+		}
+		
+	}
+}
+
 }
 
 .dropdownToggle {
@@ -143,9 +152,15 @@ a {
     width: 30px;
     position: absolute;
     bottom: -22px;
-    right: 0;
+    right: 42px;
     z-index: 9999;
 	}
+}
+
+.subtitle {
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+	border-bottom: solid 1px #707070;
 }
 
 #navbarNavDropdown {
@@ -153,7 +168,7 @@ a {
 }
 
 .dropdown-menu {
-	left: 25%;
+	left: 15%;
     right: 10%;
     top: auto;
     margin-top: 10px;
@@ -174,17 +189,13 @@ a {
     width: 100%;
     border-width: 1px;
     border-color: $brand-primary;
+}
 
-    .subtitle {
-	    padding-bottom: .5rem;
-	    margin-bottom: 1rem;
-	    border-bottom: 1px solid #707070;
-    }
-
-    a {
-    	display: inline-block;
-    	margin-bottom: .5rem;
-    }
+.sub-menu {
+	a {
+		display: inline-block;
+		margin-bottom: 0.7rem;
+	}
 }
 
 #breadcrumbs {
@@ -211,18 +222,28 @@ a {
 /*----------------------[PAGES]-------------------*/
 /*------------------------------------------------*/
 
+sup {
+	font-size: 14px;
+}
+
+
 //PAGE TITLES
 
 .pageHeader {
     height: 500px;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center bottom;
+    background-size: cover;
 	display: flex;
     justify-content: center;
     align-items: center;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    h3 {
+    	font-weight: bold;
+    }
 }
 
 
@@ -279,9 +300,13 @@ a {
 		.individualProduct {
 			text-align: center;
 
+			img {
+				box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+			}
+
 			h5 {
-				font-size: 16px;
-				display: block;
+				font-size: 22px;
+				font-weight: bold;
 				margin-top: 20px;
 			}
 

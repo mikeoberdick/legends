@@ -59,7 +59,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 <li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" class="nav-item dropdown mega-dropdown">
 	<a class="nav-link dropdownToggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
 		<div class="dropdown-menu mega-menu v-2 z-depth-1 special-color py-3 px-3" aria-labelledby="navbarDropdownMenuLink">
-			<div class="row">
+			<div class="row w-100">
 				<?php $terms = get_terms('product-category'); ?>
 				<?php foreach ( $terms as $term ) { ?>
 				<div class="col-md-6 col-xl-3 sub-menu mb-xl-0 mb-4">

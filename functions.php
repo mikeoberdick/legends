@@ -39,22 +39,13 @@ add_filter('widget_text', 'do_shortcode');
 add_theme_support( 'yoast-seo-breadcrumbs' );
 
 
-
-
-
 // *** Theme Styles *** \\
-
 function d4tw_enqueue_styles () {
     wp_enqueue_style( 'Lato', 'https://fonts.googleapis.com/css?family=Lato' );
 }
 add_action('wp_enqueue_scripts', 'd4tw_enqueue_styles');
 
-
-
-
-
 // *** Theme Scripts *** \\
-
 function d4tw_enqueue_scripts () {
    wp_enqueue_script( 'Theme JS', get_stylesheet_directory_uri() . '/js/theme.js', array('jquery'), '1.0.0', true );
 }
@@ -108,9 +99,9 @@ add_action('wp_dashboard_setup', 'd4tw_add_dashboard_widget' );
  
 function d4tw_theme_info() {
   echo "<ul>
-  <li><strong>Developed By:</strong> Designs 4 The Web</li>
-  <li><strong>Website:</strong> <a href='http://www.designs4theweb.com'>www.designs4theweb.com</a></li>
-  <li><strong>Contact:</strong> <a href='mailto:mike@designs4theweb.com'>mike@designs4theweb.com</a></li>
+  <li><strong>Developed By:</strong> Pixelstrike Creative</li>
+  <li><strong>Website:</strong> <a href='https://www.pixelstrikecreative.com'>www.pixelstrikecreative.com</a></li>
+  <li><strong>Contact:</strong> <a href='mailto:contact@pixelstrikecreative.com'>contact@pixelstrikecreative.com</a></li>
   </ul>";
 }
 

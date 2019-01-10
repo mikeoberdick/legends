@@ -29,7 +29,7 @@ $copy = get_field('description', $term);
 
 <main class="site-main" id="main">
 	<div class="container">
-		<div class="row individualProducts"> 
+		<div class="row individualProducts">
 
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>          
 					<div class="individualProduct col-lg-3"> 

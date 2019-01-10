@@ -13,6 +13,10 @@ jQuery(document).ready(function() {
 //Disable the 'products' link in footer menu
 jQuery('#menu-footer-menu li a').first().removeAttr("href").css("cursor","default");
 
+//Transform all of the ® to be superscript in breadcrumbs
 jQuery("a:contains('®')").html(function(_, html) {
    return html.replace(/(®)/g, '<sup>®</sup>');
 });
+
+//Disable the 'products' link in breadcrumbs
+jQuery('#breadcrumbs a[href$="products/"]').removeAttr("href").css("cursor","default");

@@ -202,8 +202,10 @@ a {
 	position: absolute;
     top: 125px;
     color: #fff;
+    font-size: 0.7rem;
 
     a {
+    	font-size: 0.7rem;
     	color: #fff;
     }
 }
@@ -224,6 +226,7 @@ a {
 
 sup {
 	font-size: 14px;
+	top: -0.2em;
 }
 
 
@@ -277,6 +280,7 @@ sup {
 		h5 {
 			margin-top: 15px;
 			text-align: center;
+			font-weight: bold;
 		}
 	}
 }
@@ -301,10 +305,11 @@ sup {
 			text-align: center;
 
 			img {
-				box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+				filter: drop-shadow(0px 3px 15px rgba(0,0,0,.5));
 			}
 
 			h5 {
+				min-height: 52px;
 				font-size: 22px;
 				font-weight: bold;
 				margin-top: 20px;
@@ -330,6 +335,9 @@ sup {
 		a {
 			color: $brand-primary;
 		}
+	}
+	.singleProduct {
+		font-weight: bold;
 	}
 	.site-main {
 		margin-top: 150px;
@@ -400,7 +408,39 @@ sup {
 	}
 
 	.tab-content {
-		padding-top: 50px;
+		padding-top: 25px;
+
+		h6 {
+			color: #fff;
+			padding: 20px 15px;
+			margin-bottom: 25px;
+		}
+
+		#ga {
+			tr:nth-of-type(2n) {
+				background-color: #f0efee;
+			}
+		}
+
+		#feeding {
+			table {
+				text-align: center;
+				p {
+					margin-bottom: auto;
+				}
+
+				th {
+					color: #fff;
+					vertical-align: middle;
+					border-left: 2px solid white;
+					border-bottom: 0;
+				}
+				td {
+					border: solid 2px #404040;
+					border-top: 0;
+				}
+			}
+		}
 	}
 }
 

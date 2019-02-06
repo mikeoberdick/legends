@@ -18,7 +18,7 @@ get_header();
 				<div class="container">
 					<div class="row">
 						<div class = "col-lg-6 offset-lg-6 titleWrapper">
-							<h3 class="pageTitle"><?php echo get_field('headline') ?></h3>
+							<h1 class="h3 pageTitle"><?php echo get_field('headline') ?></h1>
 						</div><!-- .titleWrapper -->
 					</div><!-- .row -->
 				</div><!-- .container -->

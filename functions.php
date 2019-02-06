@@ -129,7 +129,7 @@ add_action( 'admin_init', 'd4tw_remove_dash_meta' );
 
 //Filter the WordPress branding in the dashboard footer
 function d4tw_filter_admin_footer () {
-    echo '<span id="dashFooter">Website developed by <a style = "color: #ff0000; text-decoration: none;" href="http://www.designs4theweb.com" target="_blank">Designs 4 The Web</a></span>';
+    echo '<span id="dashFooter">Website developed by <a style = "color: #F05A28; text-decoration: none;" href="https://www.pixelstrikecreative.com" target="_blank">Pixelstrike Creative</a></span>';
 }
 add_filter('admin_footer_text', 'd4tw_filter_admin_footer');
 
@@ -286,3 +286,14 @@ function create_product_cat_taxonomy() {
   );
   register_taxonomy( 'product-category', array( 'products' ), $args );
 }
+
+//Add in the superscript button functionality to the MCE editor
+function my_mce_buttons_2( $buttons ) { 
+    /**
+     * Add in a core button that's disabled by default
+     */
+    $buttons[] = 'superscript';
+
+    return $buttons;
+}
+add_filter( 'mce_buttons_2', 'my_mce_buttons_2' );

@@ -1,7 +1,7 @@
 <div class="container">
 	<div id="heroSection" class="row">
 		<div class="col-lg-4">
-			<h3><?php echo the_field('hero_header'); ?></h3>
+			<h1 class = "h3"><?php echo the_field('hero_header'); ?></h1>
 			<p><?php echo the_field('hero_copy'); ?></p>
 		</div><!-- .col-lg-4 -->
 		<div id = "productImages" class="col-lg-8">
@@ -30,7 +30,7 @@
 					<img src = "<?php echo $image['url']; ?>" title = "<?php echo $image['title']; ?>" alt = "<?php echo $image['alt']; ?>" />
 				<?php endif; ?>
 				<?php if( $link ): ?>
-					<h5><?php echo $link['title']; ?></h5>
+					<h2 class = "h5"><?php echo $link['title']; ?></h2>
 				<?php endif; ?>
 			</a><!-- .productCalloutWrapper -->
 		</div><!-- .col-lg-3 -->

@@ -20,7 +20,7 @@ $copy = get_field('description', $term);
 	<div class="container">
 		<div class="row">
 			<div class = "col-lg-6 offset-lg-6 titleWrapper">
-				<h3 class="pageTitle"><?php echo $term->name; ?></h3>
+				<h1 class="h3 pageTitle"><?php echo $term->name; ?></h1>
 				<p><?php echo term_description(); ?></p>
 			</div><!-- .titleWrapper -->
 		</div><!-- .row -->
@@ -36,7 +36,7 @@ $copy = get_field('description', $term);
 	    			<a href="<?php the_permalink(); ?>">
 	    				<?php the_post_thumbnail( 'medium' ); ?>
 	    			</a>
-	    				<h5><?php the_field('product_display_name'); ?></h5>
+	    				<h2 class = "h5"><?php the_field('product_display_name'); ?></h2>
 	    				<a href="<?php the_permalink(); ?>">
 	    					<button role = 'button' class = 'btn' style = "background-color:<?php the_field('product_color'); ?>">Learn More</button>
 	    				</a>

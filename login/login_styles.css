@@ -1,0 +1,38 @@
+#login {
+	padding-top: 5% !important;
+}
+
+.login h1 a {
+	background-image: url(/wp-content/themes/wp-understrap/login/login_logo.png) !important;
+	height: 206px !important;
+	width: 320px !important;
+	-webkit-background-size: contain !important; }
+
+.login form {
+	background: #dedede !important;
+	border-radius: 5px
+}
+
+.login label {
+	color: #666666 !important;
+}
+
+.login #backtoblog a, .login #nav a {
+	color: #ffffff !important;
+}
+
+body.login {
+background: #ef522a;
+}
+
+.login .button {
+	background: #a7a7a7 !important;
+	border: 0 !important;
+	text-shadow: none !important;
+	box-shadow: 0px 3px 15px rgba(0,0,0,0.2) !important;
+	transition: all 0.5s !important;
+}
+
+.login .button:hover {
+	background: #000000 !important;
+}

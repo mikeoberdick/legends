@@ -20,3 +20,7 @@ jQuery("a:contains('®')").html(function(_, html) {
 
 //Disable the 'products' link in breadcrumbs
 jQuery('#breadcrumbs a[href$="products/"]').removeAttr("href").css("cursor","default");
+
+//Grab the background color for the product in order to apply to the table header
+var color = jQuery('.where-to-buy button').attr("style");
+jQuery('#feeding thead').attr("style", color);
